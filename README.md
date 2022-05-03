@@ -10,6 +10,16 @@ Using a publicly available dataset, I performed some minor cleaning and data mun
 
 For example, if you're curious to see solo artists that make high tempo, upbeat songs & their relative BPM, you can filter for that and see how it has changed (or not changed!) over time. 
 
+## Data Preparation 
+
+First, I dropped all the NA columns to omit missing data. Then, I noticed that in a database of 1,000 songs, there were over 100 unique genres. While this may be due to the artists' creativity deciding to create a new genre for a song that eventually became popular, leaving it in that state would have made Plotly visualizations extremely cluttered. 
+
+In order to combat this, I decided to group the genres into 9 key groups that could eventually be plotted. I also used pandas methods to create 2 new columns based on the numeric value of Energy and Danceability of a song. In its raw form, these columns had a number attached, and using pandas, I grouped them into low, medium, and high respectively. 
+
+Also, to make the updating table more aesthetically pleasing, I renamed some columns to give them more understandable names. For example, 'acous' became 'softness'.
+
+After this main part of data preparation, I used our template from class to convert a dataframe into an html table, used html components to create Dropdown lists, and included callbacks and functions to ensure that the graph and tables update according to user input. 
+
 ### Data Description 
 
 A link to the data is available on the upper left hand corner of the Dashboard and here: 
